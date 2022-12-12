@@ -3,12 +3,16 @@ import React from 'react'
 import Note from './Note'
 import "../styles.css";
 
-export default function NotesList() {
+const NotesList = ({ notes , handleDeleteNote}) => {
   return (
-    <div>
-        <Note/>
-        <Note/>
-        <Note/>
+    <div className="note-list">
+      {notes.map((note) => (
+        <Note id={note.id} title={note.title} content={note.content} color={note.color} handleDeleteNote={handleDeleteNote}/>
+      ))}
+
     </div>
   )
 }
+
+
+export default NotesList;
