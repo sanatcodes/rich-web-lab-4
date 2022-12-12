@@ -1,9 +1,8 @@
-import React from 'react'
 import "../styles.css";
 
 
-const Note = ( {id, title, content,color, handleDeleteNote}) => {
-  
+const Note = ( {id, title, content,color, handleDeleteNote, handleEditNote}) => {
+
   const colorMap = {
     blue: "#7ec4cf",
     red: "#ff7477",
@@ -14,8 +13,6 @@ const Note = ( {id, title, content,color, handleDeleteNote}) => {
   const changeColor = (color,e) => {
     e.target.parentElement.style.backgroundColor = colorMap[color];
   }
-
-  
 
   return (
     <div className="note-item" 
@@ -29,7 +26,7 @@ const Note = ( {id, title, content,color, handleDeleteNote}) => {
         <button type = "button" className = "btn blue-note-btn" onClick={(e)=> changeColor('blue',e)} >Blue </button>
         <button type = "button" className = "btn red-note-btn" onClick={(e)=> changeColor('red',e)}> Red </button>
         <button type = "button" className = "btn green-note-btn" onClick={(e)=> changeColor('green',e)}> Green </button>
-        <button type = "button" className = "btn edit-note-btn"> Edit </button>
+        <button type = "button" className = "btn edit-note-btn" onClick={()=> handleEditNote(id)}> Edit</button>
     </div>
   ) 
 }
