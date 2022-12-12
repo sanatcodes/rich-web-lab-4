@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { AddNote } from "./components/AddNote";
 
-
+// main app component
 const App = () => {
   
   const [notes, setNotes] = useState([]);
